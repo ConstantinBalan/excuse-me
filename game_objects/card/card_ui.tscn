@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://c21huh347s2ug"]
+
+[ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
+[ext_resource type="Texture2D" uid="uid://luc5g73y5g8n" path="res://assets/card_background.jpg" id="2_na8y8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f17eu"]
+size = Vector2(100, 120)
+
+[node name="CardUI" type="Control"]
+custom_minimum_size = Vector2(100, 120)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1052.0
+offset_bottom = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_f17eu")
+
+[node name="Color" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13405016, 0.15808624, 0.44370884, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 168.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.37000123, 0.32999992)
+texture = ExtResource("2_na8y8")
+
+[node name="State" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "State"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DropPointDetector" type="Area2D" parent="."]
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
+position = Vector2(50, 60)
+shape = SubResource("RectangleShape2D_f17eu")

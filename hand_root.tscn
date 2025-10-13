@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dplixbn470yd7"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hand" type="Node2D" parent="."]
+unique_name_in_owner = true

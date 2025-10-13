@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://1lkvdd4df0p3"]
+
+[ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
+[ext_resource type="PackedScene" uid="uid://dplixbn470yd7" path="res://hand_root.tscn" id="2_rhhlq"]
+[ext_resource type="PackedScene" uid="uid://c21huh347s2ug" path="res://game_objects/card/card_ui.tscn" id="3_xuagx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ihx"]
+size = Vector2(1142, 377)
+
+[node name="Apartment" type="Node2D"]
+
+[node name="Apartment_Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.8953125, 0.8958333)
+texture = ExtResource("1_s7ihx")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(576, 189)
+shape = SubResource("RectangleShape2D_s7ihx")
+
+[node name="EventUI" type="CanvasLayer" parent="."]
+
+[node name="Hand_Root" parent="EventUI" instance=ExtResource("2_rhhlq")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -198.0
+offset_right = 500.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CardUI" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
+layout_mode = 2
+
+[node name="CardUI2" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
+layout_mode = 2
+
+[node name="CardUI3" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
+layout_mode = 2
