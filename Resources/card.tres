@@ -1,3 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://dk6xa606gslde"]
+[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://dk6xa606gslde"]
+
+[ext_resource type="Texture2D" uid="uid://dmmtl3x0ndqn1" path="res://assets/icon.svg" id="1_yu4vl"]
+[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="2_qbrfv"]
 
 [resource]
+script = ExtResource("2_qbrfv")
+card_texture = ExtResource("1_yu4vl")
+card_name = "The Runs"
+card_cost = 5
+card_type = "Body"

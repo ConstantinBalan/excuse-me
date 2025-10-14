@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c21huh347s2ug"]
+[gd_scene load_steps=5 format=3 uid="uid://c21huh347s2ug"]
 
 [ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
+[ext_resource type="Script" uid="uid://c8nrsphpohsrr" path="res://game_objects/card/card.gd" id="2_4pa57"]
 [ext_resource type="Texture2D" uid="uid://luc5g73y5g8n" path="res://assets/card_background.jpg" id="2_na8y8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f17eu"]
@@ -17,9 +18,9 @@ offset_bottom = -528.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_f17eu")
+script = ExtResource("2_4pa57")
 
 [node name="Color" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
