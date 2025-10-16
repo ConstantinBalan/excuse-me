@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://cwwxiff6d7dgx"]
+
+[ext_resource type="Texture2D" uid="uid://luc5g73y5g8n" path="res://assets/card_background.jpg" id="1_qj3fs"]
+[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_x1sab"]
+
+[resource]
+script = ExtResource("1_x1sab")
+card_texture = ExtResource("1_qj3fs")
+card_name = "Grandma Died"
+card_cost = 10
+card_type = 1
+metadata/_custom_type_script = "uid://disngqtd7hbjl"

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c21huh347s2ug"]
+[gd_scene load_steps=7 format=3 uid="uid://c21huh347s2ug"]
 
 [ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
 [ext_resource type="Script" uid="uid://c8nrsphpohsrr" path="res://game_objects/card/card.gd" id="2_4pa57"]
 [ext_resource type="Texture2D" uid="uid://luc5g73y5g8n" path="res://assets/card_background.jpg" id="2_na8y8"]
+[ext_resource type="Script" uid="uid://dy0rmwppjmfyb" path="res://game_objects/card/card_states/card_state_machine.gd" id="4_qvuhk"]
+[ext_resource type="Script" uid="uid://lgxjph8xisln" path="res://game_objects/card/card_states/card_state.gd" id="5_q34kd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f17eu"]
 size = Vector2(100, 120)
@@ -61,3 +63,21 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
 position = Vector2(50, 60)
 shape = SubResource("RectangleShape2D_f17eu")
+
+[node name="CardStateMachine" type="Node" parent="."]
+script = ExtResource("4_qvuhk")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_q34kd")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_q34kd")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_q34kd")
+state = 2
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_q34kd")
+state = 4

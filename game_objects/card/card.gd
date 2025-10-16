@@ -6,6 +6,8 @@ extends Node
 
 @export var card_data: CardStats
 
+signal reparent_requested(which_card_ui: Card)
+
 func _ready():
 	card_image.texture = card_data.card_texture
 	card_name.text = card_data.card_name

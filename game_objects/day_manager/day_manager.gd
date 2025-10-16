@@ -39,5 +39,6 @@ func generate_event_data(day_of_week: Current_Weekday, day_type: String, day_kar
 		"Friday":
 			print("It's Monday")
 			
+
 func play_event(events: Array[Event]):
 	pass

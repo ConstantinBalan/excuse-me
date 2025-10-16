@@ -6,7 +6,8 @@ const CARD = preload("res://game_objects/card/card_ui.tscn")
 @onready var hand = %Hand
 
 func _ready():
-	add_5_cards()
+	pass
+	#add_5_cards()
 
 func add_5_cards() -> void:
 	for _x in 5:
