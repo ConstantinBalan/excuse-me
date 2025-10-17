@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://dk6xa606gslde"]
 
-[ext_resource type="Texture2D" uid="uid://dmmtl3x0ndqn1" path="res://assets/icon.svg" id="1_2jnot"]
+[ext_resource type="Texture2D" uid="uid://bdlwhahapg6w7" path="res://assets/queen_of_clubs2.png" id="1_2jnot"]
 [ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="2_d8c34"]
 
 [resource]

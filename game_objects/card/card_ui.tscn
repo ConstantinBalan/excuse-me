@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c21huh347s2ug"]
+[gd_scene load_steps=6 format=3 uid="uid://c21huh347s2ug"]
 
 [ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
 [ext_resource type="Script" uid="uid://c8nrsphpohsrr" path="res://game_objects/card/card.gd" id="2_4pa57"]
-[ext_resource type="Texture2D" uid="uid://luc5g73y5g8n" path="res://assets/card_background.jpg" id="2_na8y8"]
 [ext_resource type="Script" uid="uid://dy0rmwppjmfyb" path="res://game_objects/card/card_states/card_state_machine.gd" id="4_qvuhk"]
 [ext_resource type="Script" uid="uid://lgxjph8xisln" path="res://game_objects/card/card_states/card_state.gd" id="5_q34kd"]
 
@@ -31,7 +30,6 @@ offset_left = 1.0
 offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.13405016, 0.15808624, 0.44370884, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -43,7 +41,7 @@ offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.37000123, 0.32999992)
-texture = ExtResource("2_na8y8")
+expand_mode = 3
 
 [node name="State" type="Label" parent="."]
 layout_mode = 1
@@ -64,8 +62,9 @@ monitorable = false
 position = Vector2(50, 60)
 shape = SubResource("RectangleShape2D_f17eu")
 
-[node name="CardStateMachine" type="Node" parent="."]
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("4_qvuhk")
+initial_state = NodePath("CardBaseState")
 
 [node name="CardBaseState" type="Node" parent="CardStateMachine"]
 script = ExtResource("5_q34kd")
@@ -81,3 +80,7 @@ state = 2
 [node name="CardReleasedState" type="Node" parent="CardStateMachine"]
 script = ExtResource("5_q34kd")
 state = 4
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
