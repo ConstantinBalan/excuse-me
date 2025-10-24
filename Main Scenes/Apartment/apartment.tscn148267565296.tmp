@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1lkvdd4df0p3"]
+[gd_scene load_steps=12 format=3 uid="uid://1lkvdd4df0p3"]
 
 [ext_resource type="Script" uid="uid://csd1anqre5c5y" path="res://game_objects/day_manager/day_manager.gd" id="1_a83q5"]
 [ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://dgesk4vmcuq46" path="res://Resources/Card Types/tired.tres" id="6_a83q5"]
 [ext_resource type="Resource" uid="uid://byp6slx5qot5u" path="res://Resources/Card Types/TheOlBallAndChain.tres" id="7_v06vk"]
 [ext_resource type="PackedScene" uid="uid://dxxx2prbs8u6j" path="res://game_objects/event/event_ui.tscn" id="9_jhlk3"]
+[ext_resource type="Resource" uid="uid://6lgp7jffyrp7" path="res://Resources/event_types/drinks_with_boss.tres" id="10_4odn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ihx"]
 size = Vector2(1142, 377)
@@ -28,9 +29,9 @@ collision_layer = 2
 position = Vector2(576, 189)
 shape = SubResource("RectangleShape2D_s7ihx")
 
-[node name="UI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+[node name="EventUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
-[node name="Hand_Root" parent="UI" instance=ExtResource("2_rhhlq")]
+[node name="Hand_Root" parent="EventUI" instance=ExtResource("2_rhhlq")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -44,30 +45,30 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="CardUI" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
+[node name="CardUI" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
 card_data = ExtResource("4_aqiog")
 
-[node name="CardUI2" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
+[node name="CardUI2" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
 card_data = ExtResource("5_v06vk")
 
-[node name="CardUI3" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
+[node name="CardUI3" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
 card_data = ExtResource("6_a83q5")
 
-[node name="CardUI4" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
+[node name="CardUI4" parent="EventUI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
 card_data = ExtResource("7_v06vk")
 
-[node name="EventUI" parent="UI" instance=ExtResource("9_jhlk3")]
-unique_name_in_owner = true
-offset_left = 600.0
-offset_top = 58.0
-offset_right = -163.0
-offset_bottom = -380.0
+[node name="EventUI2" parent="EventUI" instance=ExtResource("9_jhlk3")]
+offset_left = 664.0
+offset_top = 92.0
+offset_right = -99.0
+offset_bottom = -346.0
+event_data = ExtResource("10_4odn2")
 
-[node name="DebugText" type="Label" parent="UI"]
+[node name="Label" type="Label" parent="EventUI"]
 offset_left = 93.0
 offset_top = 42.0
 offset_right = 355.0
@@ -76,13 +77,3 @@ text = "Debug Text Box"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
-
-[node name="NextEventButton" type="Button" parent="UI"]
-unique_name_in_owner = true
-offset_left = 1033.0
-offset_top = 284.0
-offset_right = 1132.0
-offset_bottom = 366.0
-text = "Next Event"
-
-[connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]

@@ -1,44 +1,148 @@
 class_name Day_Manager
 extends Node
 
-var events: Array[Event]
-var current_day: Current_Weekday
-enum Current_Weekday {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY}
+var daily_events: Array[EventInstance]  # Events for the current day
+var event_queue: Array[EventInstance]   # Events waiting to be shown
+var current_day: GameEnums.WeekDay
+var current_weather: GameEnums.Weather
+var all_event_resouces: Array[EventStats] = []
+
+@onready var event_ui: EventUI = %EventUI  # Reference to your event UI scene
+@onready var next_event_button : Button = %NextEventButton
+
+signal day_completed
+signal week_completed
+signal load_next_event
 
 func _init():
-	pass
-
+	_preload_event_resources()
+	if not all_event_resouces.is_empty():
+		print("Successfully loaded resources: " + str(all_event_resouces))
+		
+		
 func _ready():
-	events = []
-	current_day = Current_Weekday.MONDAY
-	generate_events_for_day(current_day, "Rainy")
-	play_event(events)
+	load_next_event.connect(display_next_event)
+	if GameManager.has_save_game:
+		#load save game events
+		#set current day
+		#play next events
+		pass
+	else:
+		#Start new week
+		daily_events = []
+		#Set the day to Monday
+		current_day = GameEnums.WeekDay.MONDAY
+		#Get a random weather for Monday
+		var current_weather = randi() % 6
+		generate_events_for_day(current_day, current_weather)
 
-func generate_events_for_day(day_of_week: Current_Weekday,day_type: String) -> void:
-	var events_for_day = randi() % 3
+func generate_events_for_day(day_of_week: GameEnums.WeekDay, day_weather: GameEnums.Weather) -> void:
+	daily_events.clear()
+	event_queue.clear()
 	
-	for event in events_for_day:
-		var event_data: Event = generate_event_data(day_of_week, day_type, 5)
-		events.append(event_data)
+	var num_events = randi() % 3 + 1  # Generate 1-3 events
+	print("Today's weather is: " + str(day_weather))
+	print("Number of events for the day are: " + str(num_events))
+	
+	var available_events = load_filtered_events(day_of_week, day_weather)
+	print(available_events)
+	
+	for events_for_today in range(num_events):
+		var selected_event = select_weighted_random_event(available_events)
+		if selected_event:
+			var new_event = EventInstance.new(selected_event)
+			daily_events.append(new_event)
+			event_queue.append(new_event)
+	
+	if not event_queue.is_empty():
+		display_next_event()
 
-func generate_event_data(day_of_week: Current_Weekday, day_type: String, day_karma: int):
-	match day_of_week:
-		"Monday":
-			print("It's Monday")
-			match day_type:
-				"Rainy":
-					print("It's Rainy")
-				"Windy":
-					print("It's Windy")
-		"Tuesday":
-			print("It's Monday")
-		"Wednesday":
-			print("It's Monday")
-		"Thursday":
-			print("It's Monday")
-		"Friday":
-			print("It's Monday")
+func _preload_event_resources() -> void:
+	# Load all event resources at startup
+	all_event_resouces.clear()
+	var events_path = "res://Resources/event_types"
+	
+	# Get all .tres files in the events directory
+	var resource_paths = []
+	
+	# Use ResourceLoader to get a list of all resources in the directory
+	resource_paths = ResourceLoader.list_directory(events_path)
+
+	# Load each resource
+	for path in resource_paths:
+		if path.ends_with(".tres"):
+			var event_res = ResourceLoader.load("res://Resources/event_types/" + path) as EventStats
+			if event_res:
+				all_event_resouces.append(event_res)
+
+func load_filtered_events(day_of_week: GameEnums.WeekDay, weather: GameEnums.Weather) -> Array:
+	var filtered_events: Array = []
+	
+	# Filter from preloaded resources
+	for event_res in all_event_resouces:
+		if is_event_valid(event_res, day_of_week, weather):
+			filtered_events.append(event_res)
+	
+	return filtered_events
+
+func is_event_valid(event: EventStats, day: GameEnums.WeekDay, weather: GameEnums.Weather) -> bool:
+	# Check if event can occur on this day
+	if not event.allowed_days.is_empty() and not event.allowed_days.has(day):
+		return false
+		
+	# Check if event can occur in this weather
+	if not event.allowed_weather.is_empty() and not event.allowed_weather.has(weather):
+		return false
+		
+	# Add more conditions here as needed (e.g., holiday checks, relationship checks)
+	
+	return true
+
+func select_weighted_random_event(events: Array) -> EventStats:
+	if events.is_empty():
+		print("Events for the day were empty")
+		return null
+		
+	var total_weight = 0
+	for event in events:
+		total_weight += event.weight
+		
+	var random_value = randi() % total_weight
+	var current_weight = 0
+	
+	for event in events:
+		current_weight += event.weight
+		if random_value < current_weight:
+			return event
 			
+	return events[0]  # Fallback in case of rounding errors
 
-func play_event(events: Array[Event]):
-	pass
+func display_next_event() -> void:
+	if event_queue.is_empty():
+		print("Out of events for the day")
+		_on_day_completed()
+		return
+		
+	var next_event = event_queue.pop_front()
+	event_ui.display_event(next_event)
+
+func _on_event_completed(result: Dictionary) -> void:
+	# Store result if needed
+	if not event_queue.is_empty():
+		display_next_event()
+	else:
+		_on_day_completed()
+
+func _on_day_completed() -> void:
+	current_day = (current_day + 1) % GameEnums.WeekDay.size()
+	if current_day == GameEnums.WeekDay.MONDAY:
+		emit_signal("week_completed")
+	else:
+		current_weather = randi() % GameEnums.Weather.size()
+		generate_events_for_day(current_day, current_weather)
+		emit_signal("day_completed")
+
+
+func _on_next_event_button_pressed() -> void:
+	print("Loading next event")
+	load_next_event.emit()

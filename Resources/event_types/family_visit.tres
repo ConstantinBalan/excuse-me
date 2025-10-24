@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://ftko8e6ac4ll"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_cm6kj"]
+
+[resource]
+script = ExtResource("1_cm6kj")
+event_name = "Family Visit"
+event_flavor_text = "Oh god, I gotta clean up that stack of plates before they get here"
+event_energy_cost = 4
+event_type = 1
+event_severity = 1
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

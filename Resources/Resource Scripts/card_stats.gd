@@ -1,6 +1,9 @@
 class_name CardStats
 extends Resource
 
+enum card_style_type {FRIENDS, FAMILY, WORK}
+
+
 ## The image for the card
 @export var card_texture: Texture2D
 
@@ -12,4 +15,4 @@ extends Resource
 
 
 ## The card type determines which type of event the card is most effective against
-@export var card_type : CardType.card_type
+@export var card_type : card_style_type

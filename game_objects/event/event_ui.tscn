@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxxx2prbs8u6j"]
+
+[ext_resource type="Script" uid="uid://dliap7yl6dg5h" path="res://game_objects/event/event.gd" id="1_nypx3"]
+[ext_resource type="Texture2D" uid="uid://fexqgy6dxmd6" path="res://assets/flashcard.jpg" id="2_c3isr"]
+[ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="3_c5lbt"]
+
+[node name="EventUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nypx3")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c3isr")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+alignment = 1
+
+[node name="EventTitle" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("3_c5lbt")
+theme_override_font_sizes/font_size = 24
+text = "Event Title"
+horizontal_alignment = 1
+
+[node name="EventEnergy" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.1
+theme = ExtResource("3_c5lbt")
+text = "Cost
+"
+horizontal_alignment = 1
+
+[node name="FlavorText" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.53
+theme = ExtResource("3_c5lbt")
+theme_override_font_sizes/font_size = 16
+text = "Event Flavor Text"
+horizontal_alignment = 1
+autowrap_mode = 2

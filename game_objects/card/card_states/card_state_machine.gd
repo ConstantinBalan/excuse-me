@@ -38,6 +38,7 @@ func _on_transition_requested(from: CardState, to: CardState.State) -> void:
 		return
 		
 	var new_state: CardState = states[to]
+	print(states)
 	if not new_state:
 		return
 	

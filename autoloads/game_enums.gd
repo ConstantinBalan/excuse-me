@@ -1,0 +1,8 @@
+class_name GameEnums
+extends Node
+
+enum WeekDay {MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY}
+enum Weather {SUNNY, RAINY, HAIL, SNOWY, WINDY, CLOUDY}
+enum Holidays {CHRISTMAS, THANKSGIVING, EASTER, FOURTH_OF_JULY, NEW_YEARS}
+enum EventStyle {WORK, FRIENDS, FAMILY}
+enum EventSeverity {CASUAL, SERIOUS, EMERGENCY}
