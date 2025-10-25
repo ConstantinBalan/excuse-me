@@ -9,6 +9,7 @@ var all_event_resouces: Array[EventStats] = []
 
 @onready var event_ui: EventUI = %EventUI  # Reference to your event UI scene
 @onready var next_event_button : Button = %NextEventButton
+@onready var current_day_label: Label = %CurrentDay
 
 signal day_completed
 signal week_completed
@@ -22,6 +23,7 @@ func _init():
 		
 func _ready():
 	load_next_event.connect(display_next_event)
+	day_completed.connect(update_current_day_label)
 	if GameManager.has_save_game:
 		#load save game events
 		#set current day
@@ -32,6 +34,7 @@ func _ready():
 		daily_events = []
 		#Set the day to Monday
 		current_day = GameEnums.WeekDay.MONDAY
+		current_day_label.text = "Current Day: " + map_current_day_enum_to_string(current_day)
 		#Get a random weather for Monday
 		var current_weather = randi() % 6
 		generate_events_for_day(current_day, current_weather)
@@ -142,7 +145,24 @@ func _on_day_completed() -> void:
 		generate_events_for_day(current_day, current_weather)
 		emit_signal("day_completed")
 
-
 func _on_next_event_button_pressed() -> void:
 	print("Loading next event")
 	load_next_event.emit()
+
+func map_current_day_enum_to_string(current_day_enum_val: GameEnums.WeekDay) -> String:
+	match current_day_enum_val:
+		0:
+			return "Monday"
+		1:
+			return "Tuesday"
+		2:
+			return "Wednesday"
+		3:
+			return "Thursday"
+		4:
+			return "Friday"
+		_:
+			return "Oops, you missed mapping a day"
+
+func update_current_day_label():
+	current_day_label.text = "Current Day: " + map_current_day_enum_to_string(current_day)

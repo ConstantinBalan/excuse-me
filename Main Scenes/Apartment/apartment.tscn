@@ -85,4 +85,16 @@ offset_right = 1132.0
 offset_bottom = 366.0
 text = "Next Event"
 
+[node name="TopHUDInfo" type="HBoxContainer" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 43.0
+grow_horizontal = 2
+
+[node name="CurrentDay" type="Label" parent="UI/TopHUDInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Current Day"
+
 [connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]
