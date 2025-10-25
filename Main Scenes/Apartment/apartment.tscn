@@ -97,4 +97,11 @@ layout_mode = 2
 size_flags_horizontal = 6
 text = "Current Day"
 
+[node name="CurrentWeek" type="Label" parent="UI/TopHUDInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.29
+text = "Current Week "
+
 [connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]
