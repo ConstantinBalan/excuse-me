@@ -33,6 +33,18 @@ func on_mouse_exited() -> void:
 	if current_state:
 		current_state.on_mouse_exited()
 
+func change_state(to: CardState.State) -> void:
+	"""Publicly accessible method to change state from external code."""
+	var new_state: CardState = states[to]
+	if not new_state:
+		return
+	
+	if current_state:
+		current_state.exit()
+		
+	new_state.enter()
+	current_state = new_state
+
 func _on_transition_requested(from: CardState, to: CardState.State) -> void:
 	if from != current_state:
 		return

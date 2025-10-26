@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://1lkvdd4df0p3"]
+[gd_scene load_steps=13 format=3 uid="uid://1lkvdd4df0p3"]
 
 [ext_resource type="Script" uid="uid://csd1anqre5c5y" path="res://game_objects/day_manager/day_manager.gd" id="1_a83q5"]
 [ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
 [ext_resource type="PackedScene" uid="uid://dplixbn470yd7" path="res://hand_root.tscn" id="2_rhhlq"]
+[ext_resource type="Texture2D" uid="uid://fbc23f0vnl8d" path="res://assets/BigMac_Tonight.jpg" id="3_4odn2"]
+[ext_resource type="Script" uid="uid://52psbp3aqel3" path="res://game_objects/card_drop_area/card_drop_area.gd" id="3_urk8b"]
 [ext_resource type="PackedScene" uid="uid://c21huh347s2ug" path="res://game_objects/card/card_ui.tscn" id="3_xuagx"]
 [ext_resource type="Resource" uid="uid://cwwxiff6d7dgx" path="res://Resources/Card Types/GrandmaDied.tres" id="4_aqiog"]
 [ext_resource type="Resource" uid="uid://dk6xa606gslde" path="res://Resources/Card Types/TheRuns.tres" id="5_v06vk"]
@@ -11,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxxx2prbs8u6j" path="res://game_objects/event/event_ui.tscn" id="9_jhlk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ihx"]
-size = Vector2(1142, 377)
+size = Vector2(118, 184)
 
 [node name="Apartment" type="Node2D"]
 script = ExtResource("1_a83q5")
@@ -23,9 +25,15 @@ texture = ExtResource("1_s7ihx")
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2
+script = ExtResource("3_urk8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="CardDropArea"]
+position = Vector2(487.99997, 165.00002)
+scale = Vector2(0.24380155, 0.38413367)
+texture = ExtResource("3_4odn2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(576, 189)
+position = Vector2(487.99997, 165.00002)
 shape = SubResource("RectangleShape2D_s7ihx")
 
 [node name="UI" type="CanvasLayer" parent="." groups=["ui_layer"]]
