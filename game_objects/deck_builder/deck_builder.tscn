@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmtjirdlu744e"]
+
+[ext_resource type="PackedScene" uid="uid://dm7550mgm4dsk" path="res://game_objects/deck_builder/empty_deck_slot.tscn" id="1_gjtoi"]
+
+[node name="Deck Builder" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 785.0
+grow_horizontal = 2
+columns = 9
+
+[node name="EmptyDeckSlot" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot2" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot3" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot4" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot5" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot6" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot7" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot8" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot9" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot10" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot11" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot12" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot13" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot14" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot15" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot16" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot17" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot18" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot19" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot20" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot21" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot22" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot23" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot24" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot25" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot26" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2
+
+[node name="EmptyDeckSlot27" parent="GridContainer" instance=ExtResource("1_gjtoi")]
+layout_mode = 2

@@ -8,8 +8,8 @@ func enter() -> void:
 	if ui_layer:
 		card_ui.reparent(ui_layer)
 		
-	card_ui.card_color.color = Color.NAVY_BLUE
-	card_ui.card_name.text = "DRAGGING"
+	#card_ui.card_color.color = Color.NAVY_BLUE
+	#card_ui.card_name.text = "DRAGGING"
 	
 	min_drag_time_elapsed = false
 	var threshold_timer := get_tree().create_timer(DRAG_MIN_THRESHOLD, false)

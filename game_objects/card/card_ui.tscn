@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://c21huh347s2ug"]
+[gd_scene load_steps=11 format=3 uid="uid://c21huh347s2ug"]
 
 [ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
 [ext_resource type="Script" uid="uid://c8nrsphpohsrr" path="res://game_objects/card/card.gd" id="2_4pa57"]
+[ext_resource type="Texture2D" uid="uid://c6ikgojm7xv7g" path="res://assets/Card_Placeholder.png" id="3_t30y5"]
+[ext_resource type="Texture2D" uid="uid://cgceuqtokloqu" path="res://assets/jack_of_diamonds2.png" id="4_luc4e"]
 [ext_resource type="Script" uid="uid://b8u7pfsm1were" path="res://game_objects/card/card_states/card_base_state.gd" id="4_q34kd"]
 [ext_resource type="Script" uid="uid://dy0rmwppjmfyb" path="res://game_objects/card/card_states/card_state_machine.gd" id="4_qvuhk"]
 [ext_resource type="Script" uid="uid://dchpwppfmqvo1" path="res://game_objects/card/card_states/card_clicked_state.gd" id="5_dnoqn"]
@@ -9,18 +11,14 @@
 [ext_resource type="Script" uid="uid://bf1d622r7upyt" path="res://game_objects/card/card_states/card_released_state.gd" id="7_luc4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f17eu"]
-size = Vector2(100, 120)
+size = Vector2(200, 309)
 
 [node name="CardUI" type="Control"]
-custom_minimum_size = Vector2(100, 120)
+custom_minimum_size = Vector2(200, 307)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1052.0
-offset_bottom = -528.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 93.375
+offset_bottom = 140.25
 theme = ExtResource("1_f17eu")
 script = ExtResource("2_4pa57")
 
@@ -29,29 +27,96 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="CardBackground" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 168.0
-offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.37000123, 0.32999992)
-expand_mode = 3
+texture = ExtResource("3_t30y5")
+expand_mode = 1
+
+[node name="CardImage" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -99.5
+offset_right = 96.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_luc4e")
+expand_mode = 1
+
+[node name="CardName" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 15.0
+offset_right = 31.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "Card Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardCost" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -30.0
+offset_top = 10.0
+offset_right = -4.0
+offset_bottom = 44.0
+grow_horizontal = 0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardFlavorText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -106.0
+offset_right = 96.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 2
 
 [node name="State" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.75
+offset_top = -280.5
+offset_right = 186.75
+offset_bottom = 280.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "State"
@@ -63,7 +128,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
-position = Vector2(50, 60)
+position = Vector2(100, 154)
 shape = SubResource("RectangleShape2D_f17eu")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]

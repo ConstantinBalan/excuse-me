@@ -4,9 +4,6 @@ extends Area2D
 # Reference to the card currently placed in this drop area
 var placed_card: Card = null
 
-# Signal emitted when a card is placed or removed
-signal card_placed(card: Card)
-signal card_removed(card: Card)
 
 
 func place_card(card: Card) -> bool:
@@ -16,7 +13,7 @@ func place_card(card: Card) -> bool:
 		return false
 	
 	placed_card = card
-	card_placed.emit(card)
+	GameSignals.card_placed.emit(card)
 	return true
 
 
@@ -25,7 +22,7 @@ func remove_card() -> void:
 	if placed_card != null:
 		var card = placed_card
 		placed_card = null
-		card_removed.emit(card)
+		GameSignals.card_removed.emit(card)
 
 
 func has_card() -> bool:

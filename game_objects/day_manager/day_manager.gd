@@ -35,6 +35,7 @@ func _ready():
 		week_number = 0
 		initialize_new_week()
 
+
 func connect_signals():
 	load_next_event.connect(display_next_event)
 	day_completed.connect(update_current_day_label)

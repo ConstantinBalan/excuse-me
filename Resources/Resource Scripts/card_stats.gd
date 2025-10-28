@@ -14,5 +14,9 @@ enum card_style_type {FRIENDS, FAMILY, WORK}
 @export_range(1,10,1) var card_cost : int
 
 
+## The card flavor text that will show below the card image
+@export var card_flavor_text : String
+
+
 ## The card type determines which type of event the card is most effective against
 @export var card_type : card_style_type

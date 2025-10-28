@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm7550mgm4dsk"]
+
+[ext_resource type="Texture2D" uid="uid://dovl8alm28qiv" path="res://assets/Empty_Slot.png" id="1_8ou4r"]
+
+[node name="EmptyDeckSlot" type="Control"]
+custom_minimum_size = Vector2(200, 307)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1720.0
+offset_bottom = -773.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(200, 307)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_8ou4r")

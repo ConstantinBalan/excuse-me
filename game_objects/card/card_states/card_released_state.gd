@@ -4,8 +4,8 @@ var played: bool
 
 
 func enter() -> void:
-	card_ui.card_color.color = Color.DARK_VIOLET
-	card_ui.card_name.text = "RELEASED"
+	#card_ui.card_color.color = Color.DARK_VIOLET
+	#card_ui.card_name.text = "RELEASED"
 	played = false
 	
 	if not card_ui.drop_area == null:

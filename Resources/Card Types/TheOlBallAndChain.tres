@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://byp6slx5qot5u"]
+[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://byp6slx5qot5u"]
 
 [ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_53t4t"]
+[ext_resource type="Texture2D" uid="uid://bdlwhahapg6w7" path="res://assets/queen_of_clubs2.png" id="1_q7ldn"]
 
 [resource]
 script = ExtResource("1_53t4t")
+card_texture = ExtResource("1_q7ldn")
+card_name = "The Ol' Ball And Chain"
 card_cost = 3
+card_flavor_text = "Ya know how the yappatron be like, sorry fellas."
 metadata/_custom_type_script = "uid://disngqtd7hbjl"
