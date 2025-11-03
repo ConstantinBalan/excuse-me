@@ -9,4 +9,6 @@ card_texture = ExtResource("1_3c21y")
 card_name = "Tired"
 card_cost = 1
 card_flavor_text = "I just ain't feeling it, chief."
+card_category = 4
+excuse_key_words = Array[String](["Social", "Tired"])
 metadata/_custom_type_script = "uid://disngqtd7hbjl"

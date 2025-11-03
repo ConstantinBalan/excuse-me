@@ -3,9 +3,10 @@ extends Resource
 
 @export var event_name: String
 @export var event_flavor_text: String
-@export var event_energy_cost: int
-@export var event_type: GameEnums.EventStyle
-@export var event_severity: GameEnums.EventSeverity
+@export_range(1,20,1) var event_energy_cost: int
+@export var event_type: GameEnums.Category
+@export var event_severity: GameEnums.Severity
+@export var effective_keywords: Array[String]
 
 # Event conditions
 @export var allowed_days: Array[GameEnums.WeekDay] = []  # Empty means any day

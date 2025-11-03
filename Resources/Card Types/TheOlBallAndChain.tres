@@ -9,4 +9,6 @@ card_texture = ExtResource("1_q7ldn")
 card_name = "The Ol' Ball And Chain"
 card_cost = 3
 card_flavor_text = "Ya know how the yappatron be like, sorry fellas."
+card_category = 1
+card_excuse_severity = 1
 metadata/_custom_type_script = "uid://disngqtd7hbjl"

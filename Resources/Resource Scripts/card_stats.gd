@@ -17,6 +17,9 @@ enum card_style_type {FRIENDS, FAMILY, WORK}
 ## The card flavor text that will show below the card image
 @export var card_flavor_text : String
 
+@export var card_category : GameEnums.Category
 
-## The card type determines which type of event the card is most effective against
-@export var card_type : card_style_type
+
+@export var card_excuse_severity: GameEnums.Severity
+
+@export var excuse_key_words : Array[String]

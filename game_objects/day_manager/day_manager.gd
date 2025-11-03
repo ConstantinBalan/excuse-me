@@ -2,7 +2,6 @@ class_name Day_Manager
 extends Node
 
 var daily_events: Array[EventInstance]  # Events for the current day
-var event_queue: Array[EventInstance]   # Events waiting to be shown
 var current_day: GameEnums.WeekDay
 var current_weather: GameEnums.Weather
 var all_event_resouces: Array[EventStats] = []
@@ -49,12 +48,11 @@ func initialize_new_week():
 		week_number += 1
 		current_week_label.text = "Current Week: " + str(week_number)
 		#Get a random weather for Monday
-		var current_weather = randi() % 6
+		current_weather = randi() % 6 as GameEnums.Weather
 		generate_events_for_day(current_day, current_weather)
 
 func generate_events_for_day(day_of_week: GameEnums.WeekDay, day_weather: GameEnums.Weather) -> void:
 	daily_events.clear()
-	event_queue.clear()
 	
 	var num_events = randi() % 3 + 1  # Generate 1-3 events
 	print("Today's weather is: " + str(day_weather))
@@ -68,9 +66,8 @@ func generate_events_for_day(day_of_week: GameEnums.WeekDay, day_weather: GameEn
 		if selected_event:
 			var new_event = EventInstance.new(selected_event)
 			daily_events.append(new_event)
-			event_queue.append(new_event)
 	
-	if not event_queue.is_empty():
+	if not daily_events.is_empty():
 		display_next_event()
 
 func _preload_event_resources() -> void:
@@ -134,17 +131,17 @@ func select_weighted_random_event(events: Array) -> EventStats:
 	return events[0]  # Fallback in case of rounding errors
 
 func display_next_event() -> void:
-	if event_queue.is_empty():
+	if daily_events.is_empty():
 		print("Out of events for the day")
 		_on_day_completed()
 		return
 		
-	var next_event = event_queue.pop_front()
+	var next_event = daily_events.pop_front()
 	event_ui.display_event(next_event)
 
 func _on_event_completed(result: Dictionary) -> void:
 	# Store result if needed
-	if not event_queue.is_empty():
+	if not daily_events.is_empty():
 		display_next_event()
 	else:
 		_on_day_completed()

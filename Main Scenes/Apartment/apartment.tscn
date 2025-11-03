@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://1lkvdd4df0p3"]
+[gd_scene load_steps=15 format=3 uid="uid://1lkvdd4df0p3"]
 
 [ext_resource type="Script" uid="uid://csd1anqre5c5y" path="res://game_objects/day_manager/day_manager.gd" id="1_a83q5"]
 [ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
 [ext_resource type="Script" uid="uid://bspqob2naifl0" path="res://game_objects/card_played_calculator/card_played_calculator.gd" id="2_6bhvp"]
+[ext_resource type="Script" uid="uid://bfmu0gs5g1f77" path="res://game_objects/player/player.gd" id="2_h6cjv"]
 [ext_resource type="PackedScene" uid="uid://dplixbn470yd7" path="res://hand_root.tscn" id="2_rhhlq"]
 [ext_resource type="Texture2D" uid="uid://fbc23f0vnl8d" path="res://assets/BigMac_Tonight.jpg" id="3_4odn2"]
 [ext_resource type="Script" uid="uid://52psbp3aqel3" path="res://game_objects/card_drop_area/card_drop_area.gd" id="3_urk8b"]
@@ -18,6 +19,9 @@ size = Vector2(118, 184)
 
 [node name="Apartment" type="Node2D"]
 script = ExtResource("1_a83q5")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("2_h6cjv")
 
 [node name="CardPlayedCalculator" type="Node" parent="."]
 script = ExtResource("2_6bhvp")

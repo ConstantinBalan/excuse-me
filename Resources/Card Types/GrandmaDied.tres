@@ -9,5 +9,6 @@ card_texture = ExtResource("1_qj3fs")
 card_name = "Grandma Died"
 card_cost = 10
 card_flavor_text = "Guys, I'm sorry but my other grandma just passed away and we were really close."
-card_type = 1
+card_excuse_severity = 2
+excuse_key_words = Array[String](["Family", "Death"])
 metadata/_custom_type_script = "uid://disngqtd7hbjl"

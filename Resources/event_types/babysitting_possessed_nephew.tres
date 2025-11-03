@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://dct57fuddfmmh"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_togpb"]
+
+[resource]
+script = ExtResource("1_togpb")
+event_name = "Babysitting That Possessed Nephew"
+event_flavor_text = "Is that red crayon or ancient runes?"
+event_energy_cost = 4
+event_severity = 1
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([1, 1, 2, 0])
+weight = 2

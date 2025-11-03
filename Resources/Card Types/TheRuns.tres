@@ -9,3 +9,6 @@ card_texture = ExtResource("1_2jnot")
 card_name = "The Runs"
 card_cost = 1
 card_flavor_text = "Can't tell if it was the Mexican, or the Step Mom's Goulash."
+card_category = 4
+card_excuse_severity = 1
+excuse_key_words = Array[String](["Health", "Emergency"])
