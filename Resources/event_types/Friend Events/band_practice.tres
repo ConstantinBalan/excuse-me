@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://dvrvvlonsth4f"]
 
-[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_52nfd"]
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_jt8dd"]
 
 [resource]
-script = ExtResource("1_52nfd")
+script = ExtResource("1_jt8dd")
 event_name = "Band Practice"
 event_flavor_text = "You ain't gonna get better on your own"
 event_energy_cost = 2

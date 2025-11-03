@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://dbdxcijvnimqs"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_ir2n3"]
+
+[resource]
+script = ExtResource("1_ir2n3")
+event_name = "Meeting Your Friend’s New Partner (Who’s Way Too Into Crystals)"
+event_flavor_text = "They gave your aura a nickname. It’s ‘Lump.’"
+event_energy_cost = 5
+event_type = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

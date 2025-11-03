@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://8lc148dccwvv"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_fu61n"]
+
+[resource]
+script = ExtResource("1_fu61n")
+event_name = "Your High School Bully is a Life Coach Now"
+event_flavor_text = "She’d like to talk about ‘growth'. Yours."
+event_energy_cost = 6
+event_type = 3
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

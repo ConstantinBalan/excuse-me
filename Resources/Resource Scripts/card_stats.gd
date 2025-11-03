@@ -17,6 +17,7 @@ enum card_style_type {FRIENDS, FAMILY, WORK}
 ## The card flavor text that will show below the card image
 @export var card_flavor_text : String
 
+## The main category of the five this card falls under
 @export var card_category : GameEnums.Category
 
 

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://brtj678sde7uj"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_ipacd"]
+
+[resource]
+script = ExtResource("1_ipacd")
+event_name = "An Intervention for Your Embarrassing Playlist"
+event_flavor_text = "Turns out guilty pleasures aren’t meant for public consumption."
+event_energy_cost = 7
+event_type = 1
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

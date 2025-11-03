@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://bdswf5r1lsxtu"]
+
+[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_t8b35"]
+
+[resource]
+script = ExtResource("1_t8b35")
+card_name = "Ate Too Much Cheese"
+card_cost = 2
+card_flavor_text = "Body's brie-king down."
+card_category = 3
+card_excuse_severity = 1
+metadata/_custom_type_script = "uid://disngqtd7hbjl"

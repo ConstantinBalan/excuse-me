@@ -1,13 +1,12 @@
 [gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://6lgp7jffyrp7"]
 
-[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_e8i23"]
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_7mcs1"]
 
 [resource]
-script = ExtResource("1_e8i23")
+script = ExtResource("1_7mcs1")
 event_name = "Drinks With Your Boss"
 event_flavor_text = "You don't want to, but it may help you get that promotion"
 event_energy_cost = 3
-event_type = 2
 event_severity = 1
 allowed_days = Array[int]([0, 1, 2, 3, 4])
 allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])

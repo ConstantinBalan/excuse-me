@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://du67wnmhxnthi"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_x2igt"]
+
+[resource]
+script = ExtResource("1_x2igt")
+event_name = "Family Pet Funeral Turns into a Seance"
+event_flavor_text = "Channeling deep emotions or a deep regret for attending?"
+event_energy_cost = 7
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

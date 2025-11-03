@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://b4yh5r5pb4y2s"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_h454w"]
+
+[resource]
+script = ExtResource("1_h454w")
+event_name = "Forced to Discuss Politics at Thanksgiving Dinner"
+event_flavor_text = "At least turkey takes longer to digest than one-sided arguments."
+event_energy_cost = 8
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

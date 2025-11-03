@@ -73,20 +73,21 @@ func generate_events_for_day(day_of_week: GameEnums.WeekDay, day_weather: GameEn
 func _preload_event_resources() -> void:
 	# Load all event resources at startup
 	all_event_resouces.clear()
-	var events_path = "res://Resources/event_types"
+	var events_path = "res://Resources/event_types/"
+	var events_sub_folders : Array = ["Family Events/", "Friend Events/", "Misc Events/", "Work Events/"]
+
 	
 	# Get all .tres files in the events directory
 	var resource_paths = []
 	
-	# Use ResourceLoader to get a list of all resources in the directory
-	resource_paths = ResourceLoader.list_directory(events_path)
-
 	# Load each resource
-	for path in resource_paths:
-		if path.ends_with(".tres"):
-			var event_res = ResourceLoader.load("res://Resources/event_types/" + path) as EventStats
-			if event_res:
-				all_event_resouces.append(event_res)
+	for sub_folder in events_sub_folders:
+		resource_paths = ResourceLoader.list_directory(str(events_path) + str(sub_folder))
+		for path in resource_paths:
+			if path.ends_with(".tres"):
+				var event_res = ResourceLoader.load(events_path + sub_folder + path) as EventStats
+				if event_res:
+					all_event_resouces.append(event_res)
 
 func load_filtered_events(day_of_week: GameEnums.WeekDay, weather: GameEnums.Weather) -> Array:
 	var filtered_events: Array = []

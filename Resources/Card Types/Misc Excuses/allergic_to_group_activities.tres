@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=2 format=3 uid="uid://djkuxoh1q6ah4"]
+
+[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_tnpwo"]
+
+[resource]
+script = ExtResource("1_tnpwo")
+card_name = "Allergic to Group Activities"
+card_cost = 6
+card_flavor_text = "Break out in sarcasm and crippling anxiety."
+card_category = 3
+card_excuse_severity = 1
+metadata/_custom_type_script = "uid://disngqtd7hbjl"

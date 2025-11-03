@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://bw0ph3yv0r36j"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_sepe5"]
+
+[resource]
+script = ExtResource("1_sepe5")
+event_name = "Holding Someone’s Pet Tarantula"
+event_flavor_text = "“Don’t breathe too hard. It senses fear.”"
+event_energy_cost = 4
+event_type = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

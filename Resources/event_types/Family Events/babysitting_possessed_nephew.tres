@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://dct57fuddfmmh"]
 
-[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_togpb"]
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_a2d71"]
 
 [resource]
-script = ExtResource("1_togpb")
+script = ExtResource("1_a2d71")
 event_name = "Babysitting That Possessed Nephew"
 event_flavor_text = "Is that red crayon or ancient runes?"
 event_energy_cost = 4

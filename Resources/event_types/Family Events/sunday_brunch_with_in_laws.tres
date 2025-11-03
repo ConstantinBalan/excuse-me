@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://cm677it3mr2t8"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_oj6bh"]
+
+[resource]
+script = ExtResource("1_oj6bh")
+event_name = "Sunday Brunch with the In-Laws"
+event_flavor_text = "The eggs are lukewarm, the judgment’s not."
+event_energy_cost = 6
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

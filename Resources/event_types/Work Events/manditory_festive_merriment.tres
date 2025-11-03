@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://c66nbys26leps"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_mkfec"]
+
+[resource]
+script = ExtResource("1_mkfec")
+event_name = "Mandatory Festive Merriment"
+event_flavor_text = "Rocking around the conference room with forced cheer."
+event_energy_cost = 8
+event_type = 2
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

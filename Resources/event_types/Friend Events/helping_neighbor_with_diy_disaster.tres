@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://8iftpebbc1se"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_xqcux"]
+
+[resource]
+script = ExtResource("1_xqcux")
+event_name = "Helping Your Neighbors With a DIY Disaster"
+event_flavor_text = "\"Nothing says community like poorly attached plywood.\""
+event_energy_cost = 4
+event_type = 1
+event_severity = 1
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

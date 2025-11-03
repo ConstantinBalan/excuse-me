@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://b2plmt0bltlsg"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_3eu1r"]
+
+[resource]
+script = ExtResource("1_3eu1r")
+event_name = "Fixing Your Parent's Computer Over the Phone"
+event_flavor_text = "Apparently, knowing how to use Google qualifies you as IT support."
+event_energy_cost = 8
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

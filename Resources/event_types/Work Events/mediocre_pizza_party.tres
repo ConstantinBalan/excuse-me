@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://bqg2k8vh8goiu"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_g0t6f"]
+
+[resource]
+script = ExtResource("1_g0t6f")
+event_name = "Mediocre Pizza Party"
+event_flavor_text = "Because nothing says 'we value you' like a few slices of cardboard."
+event_energy_cost = 3
+event_type = 2
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

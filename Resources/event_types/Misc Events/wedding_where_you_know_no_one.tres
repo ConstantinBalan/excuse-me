@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://1cpu0csftd37"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_rythg"]
+
+[resource]
+script = ExtResource("1_rythg")
+event_name = "Wedding Where You Know No One"
+event_flavor_text = "Hope you like small talk next to the shrimp tray."
+event_energy_cost = 6
+event_type = 3
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"

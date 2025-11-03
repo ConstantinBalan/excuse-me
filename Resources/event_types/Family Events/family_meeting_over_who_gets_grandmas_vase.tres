@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventStats" load_steps=2 format=3 uid="uid://bjf1fgtsy72lx"]
+
+[ext_resource type="Script" uid="uid://bcnqkg501g1oq" path="res://Resources/Resource Scripts/event_stats.gd" id="1_ibph2"]
+
+[resource]
+script = ExtResource("1_ibph2")
+event_name = "Family Meeting Over Who Gets Grandma’s Vase"
+event_flavor_text = "Expect more broken than just fragile heirlooms."
+event_energy_cost = 10
+event_severity = 2
+metadata/_custom_type_script = "uid://bcnqkg501g1oq"
