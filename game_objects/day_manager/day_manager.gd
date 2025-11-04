@@ -11,6 +11,9 @@ var week_number: int
 @onready var next_event_button : Button = %NextEventButton
 @onready var current_day_label: Label = %CurrentDay
 @onready var current_week_label: Label = %CurrentWeek
+@onready var player_energy_label: Label = %PlayerEnergy
+
+@onready var player : Player = %Player
 
 signal day_completed
 signal week_completed
@@ -32,6 +35,7 @@ func _ready():
 	else:
 		#Start new week
 		week_number = 0
+		player_energy_label.text = "Player Energy: " + str(player.player_energy)
 		initialize_new_week()
 
 
@@ -177,5 +181,9 @@ func map_current_day_enum_to_string(current_day_enum_val: GameEnums.WeekDay) -> 
 		_:
 			return "Oops, you missed mapping a day"
 
-func update_current_day_label():
+func update_current_day_label() -> void:
 	current_day_label.text = "Current Day: " + map_current_day_enum_to_string(current_day)
+	
+func update_player_energy_label(updated_energy: int) -> void:
+	player_energy_label.text = "Player Energy: " + str(updated_energy)
+	

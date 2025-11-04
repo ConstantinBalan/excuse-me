@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://1lkvdd4df0p3"]
+[gd_scene load_steps=16 format=3 uid="uid://1lkvdd4df0p3"]
 
 [ext_resource type="Script" uid="uid://csd1anqre5c5y" path="res://game_objects/day_manager/day_manager.gd" id="1_a83q5"]
 [ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://dgesk4vmcuq46" path="res://Resources/Card Types/Misc Excuses/tired.tres" id="6_a83q5"]
 [ext_resource type="Resource" uid="uid://byp6slx5qot5u" path="res://Resources/Card Types/Family Excuses/the_ol_ball_and_chain.tres" id="7_v06vk"]
 [ext_resource type="PackedScene" uid="uid://dxxx2prbs8u6j" path="res://game_objects/event/event_ui.tscn" id="9_jhlk3"]
+[ext_resource type="Resource" uid="uid://c8wabxfd62bq7" path="res://Resources/Card Types/Friend Excuses/gotta_help_friend_move.tres" id="13_sxvck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ihx"]
 size = Vector2(118, 184)
@@ -21,6 +22,7 @@ size = Vector2(118, 184)
 script = ExtResource("1_a83q5")
 
 [node name="Player" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("2_h6cjv")
 
 [node name="CardPlayedCalculator" type="Node" parent="."]
@@ -78,6 +80,10 @@ card_data = ExtResource("6_a83q5")
 layout_mode = 2
 card_data = ExtResource("7_v06vk")
 
+[node name="CardUI5" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
+layout_mode = 2
+card_data = ExtResource("13_sxvck")
+
 [node name="EventUI" parent="UI" instance=ExtResource("9_jhlk3")]
 unique_name_in_owner = true
 offset_left = 1191.0
@@ -101,6 +107,7 @@ offset_bottom = 475.0
 text = "Play Card"
 
 [node name="PlayExcuseText" type="Label" parent="UI/Control"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 1317.0
 offset_top = 424.0
@@ -137,5 +144,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.29
 text = "Current Week "
+
+[node name="PlayerEnergy" type="Label" parent="UI/TopHUDInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+text = "Energy"
 
 [connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]

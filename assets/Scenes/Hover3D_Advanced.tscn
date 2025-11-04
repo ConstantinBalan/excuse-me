@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8g0ixpuh7c6s"]
+
+[ext_resource type="Shader" uid="uid://co75u220wy41s" path="res://Shaders/Hover3D_Advanced.gdshader" id="1_i5sfs"]
+[ext_resource type="Texture2D" uid="uid://dd1a4k6twht15" path="res://Sprites/BirthdayCard.png" id="2_mwl0d"]
+[ext_resource type="Texture2D" uid="uid://71k0yynaonjv" path="res://Sprites/button.png" id="2_yae86"]
+[ext_resource type="Script" uid="uid://cnrn6nvtwnwiv" path="res://Scripts/Hover3D_Advanced.gd" id="4_i5sfs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_077hx"]
+bg_color = Color(0.129412, 0.294118, 0.396078, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.974469, 0.523311, 0.5145, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_igksg"]
+shader = ExtResource("1_i5sfs")
+shader_parameter/_tilt_Scale = 0.3
+shader_parameter/_mainTint = Color(1, 1, 1, 1)
+shader_parameter/_texPos = Vector4(0.1, 0.1, 0.8, 0.8)
+shader_parameter/_zDist = 0.0
+shader_parameter/_isSecondTex = true
+shader_parameter/_secondTex = ExtResource("2_yae86")
+shader_parameter/_secondTint = Color(1, 1, 1, 1)
+shader_parameter/_texPos2 = Vector4(0.15, 0.63, 0.68, 0.17)
+shader_parameter/_zDist2 = 0.06
+shader_parameter/_isShadows = true
+shader_parameter/_shadowOffset = Vector2(0.02, -0.02)
+shader_parameter/_shadowOffset2 = Vector2(0.02, -0.02)
+shader_parameter/_shadowCol = Color(0, 0, 0, 0.5)
+shader_parameter/_isSpecularLight = true
+shader_parameter/_speularLightIntensity = 0.3
+shader_parameter/_speularLightPower = 3.0
+shader_parameter/_mousePos = Vector2(0, 0)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1149.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_077hx")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+material = SubResource("ShaderMaterial_igksg")
+layout_mode = 0
+offset_left = 385.0
+offset_top = 68.0
+offset_right = 685.0
+offset_bottom = 492.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_mwl0d")
+expand_mode = 1
+script = ExtResource("4_i5sfs")
+
+[connection signal="mouse_entered" from="Panel/TextureRect" to="Panel/TextureRect" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/TextureRect" to="Panel/TextureRect" method="_on_mouse_exited"]

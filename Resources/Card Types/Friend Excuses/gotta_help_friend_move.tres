@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://c8wabxfd62bq7"]
+
+[ext_resource type="Texture2D" uid="uid://dmmtl3x0ndqn1" path="res://assets/icon.svg" id="1_7e2ja"]
+[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_n0r5o"]
+
+[resource]
+script = ExtResource("1_n0r5o")
+card_texture = ExtResource("1_7e2ja")
+card_name = "Gotta Help My Friend Move"
+card_cost = 2
+card_flavor_text = "He slipped a disc, what choice do I have."
+card_category = 1
+card_excuse_severity = 2
+metadata/_custom_type_script = "uid://disngqtd7hbjl"
