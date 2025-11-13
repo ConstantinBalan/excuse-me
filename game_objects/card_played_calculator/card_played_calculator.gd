@@ -30,6 +30,8 @@ func check_if_event_won(played_card: Card):
 	
 	# Check severity comparison
 	severity_modifier = severity_calculator(played_card, event)
+	var sev_int: int = int(severity_modifier)
+	GameSignals.severity_result.emit(sev_int)
 	if severity_modifier != 0.0:
 		print_rich("[color=yellow][i]Severity Modifier applied: %.2f[/i][/color]" % severity_modifier)
 	final_success += severity_modifier

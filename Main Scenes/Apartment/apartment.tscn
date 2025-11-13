@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://1lkvdd4df0p3"]
+[gd_scene load_steps=17 format=3 uid="uid://1lkvdd4df0p3"]
 
 [ext_resource type="Script" uid="uid://csd1anqre5c5y" path="res://game_objects/day_manager/day_manager.gd" id="1_a83q5"]
 [ext_resource type="Texture2D" uid="uid://ssd1xa30atqh" path="res://assets/Apartment.png" id="1_s7ihx"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://byp6slx5qot5u" path="res://Resources/Card Types/Family Excuses/the_ol_ball_and_chain.tres" id="7_v06vk"]
 [ext_resource type="PackedScene" uid="uid://dxxx2prbs8u6j" path="res://game_objects/event/event_ui.tscn" id="9_jhlk3"]
 [ext_resource type="Resource" uid="uid://c8wabxfd62bq7" path="res://Resources/Card Types/Friend Excuses/gotta_help_friend_move.tres" id="13_sxvck"]
+[ext_resource type="PackedScene" uid="uid://7e4ru3ywfscn" path="res://game_objects/success_check_pop_up/success_check_pop_up.tscn" id="15_gibmg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7ihx"]
 size = Vector2(118, 184)
@@ -151,5 +152,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 text = "Energy"
+
+[node name="SuccessCheckPopUp" parent="UI" instance=ExtResource("15_gibmg")]
+offset_left = 769.0
+offset_top = 505.0
+offset_right = 769.0
+offset_bottom = 505.0
 
 [connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]

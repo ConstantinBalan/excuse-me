@@ -1,0 +1,95 @@
+[gd_scene load_steps=2 format=3 uid="uid://7e4ru3ywfscn"]
+
+[ext_resource type="Script" uid="uid://c5enj7hvwb1t8" path="res://game_objects/success_check_pop_up/success_check_pop_up.gd" id="1_wmbuv"]
+
+[node name="SuccessCheckPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wmbuv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DidYouConvinceThemLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Did You Convince Them?"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="SeverityContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SeverityModifierLabel" type="Label" parent="VBoxContainer/HBoxContainer/SeverityContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Severity Modifier"
+horizontal_alignment = 1
+
+[node name="StatusOfSeverityModifier" type="Label" parent="VBoxContainer/HBoxContainer/SeverityContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+text = "Status Of Sev Mod"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CategoryContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CategoryModifierLabel" type="Label" parent="VBoxContainer/HBoxContainer/CategoryContainer"]
+layout_mode = 2
+text = "Category Modifier"
+horizontal_alignment = 1
+
+[node name="StatusOfCategoryModifier" type="Label" parent="VBoxContainer/HBoxContainer/CategoryContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Status of Cat Mod"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="KeywordsContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="KeyWordsMatchedLabel" type="Label" parent="VBoxContainer/HBoxContainer/KeywordsContainer"]
+layout_mode = 2
+text = "Key Words Matched"
+horizontal_alignment = 1
+
+[node name="NumberOfMatchedKeyWords" type="Label" parent="VBoxContainer/HBoxContainer/KeywordsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Matched Words"
+horizontal_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
