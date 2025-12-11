@@ -48,6 +48,7 @@ func check_if_event_won(played_card: Card):
 			final_success += 0.05
 			
 	print_rich("[color=green][b]Final Success: %s[/b][/color]" % final_success)
+	
 	return final_success
 
 func severity_calculator(excuse_sev: Card, event_sev: EventUI) -> float:

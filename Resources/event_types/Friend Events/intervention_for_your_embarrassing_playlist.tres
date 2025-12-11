@@ -9,4 +9,7 @@ event_flavor_text = "Turns out guilty pleasures aren’t meant for public consum
 event_energy_cost = 7
 event_type = 1
 event_severity = 1
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])
+allowed_day_sections = Array[int]([2])
 metadata/_custom_type_script = "uid://bcnqkg501g1oq"

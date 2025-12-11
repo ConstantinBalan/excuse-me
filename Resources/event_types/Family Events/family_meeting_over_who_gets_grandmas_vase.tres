@@ -8,4 +8,7 @@ event_name = "Family Meeting Over Who Gets Grandma’s Vase"
 event_flavor_text = "Expect more broken than just fragile heirlooms."
 event_energy_cost = 10
 event_severity = 2
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])
+allowed_day_sections = Array[int]([2])
 metadata/_custom_type_script = "uid://bcnqkg501g1oq"

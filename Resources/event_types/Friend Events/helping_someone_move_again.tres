@@ -8,4 +8,7 @@ event_name = "Helping Someone Move (Again)"
 event_flavor_text = "It’s the sixth floor. No elevator."
 event_energy_cost = 5
 event_type = 1
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])
+allowed_day_sections = Array[int]([1, 2])
 metadata/_custom_type_script = "uid://bcnqkg501g1oq"

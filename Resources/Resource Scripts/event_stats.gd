@@ -11,6 +11,7 @@ extends Resource
 # Event conditions
 @export var allowed_days: Array[GameEnums.WeekDay] = []  # Empty means any day
 @export var allowed_weather: Array[GameEnums.Weather] = []  # Empty means any weather
+@export var allowed_day_sections: Array[GameEnums.DaySection] = [] # Empty means any day section
 @export var min_relationship_required: int = 0
 @export var requires_holiday: int = -1  # -1 means no holiday required
 @export var weight: int = 1  # Higher weight means more likely to be picked

@@ -8,4 +8,7 @@ event_name = "Wedding Where You Know No One"
 event_flavor_text = "Hope you like small talk next to the shrimp tray."
 event_energy_cost = 6
 event_type = 3
+allowed_days = Array[int]([0, 1, 2, 3, 4])
+allowed_weather = Array[int]([0, 1, 2, 3, 4, 5])
+allowed_day_sections = Array[int]([1, 2])
 metadata/_custom_type_script = "uid://bcnqkg501g1oq"

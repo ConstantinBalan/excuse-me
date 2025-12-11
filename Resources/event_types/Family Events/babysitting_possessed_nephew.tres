@@ -10,4 +10,5 @@ event_energy_cost = 4
 event_severity = 1
 allowed_days = Array[int]([0, 1, 2, 3, 4])
 allowed_weather = Array[int]([1, 1, 2, 0])
+allowed_day_sections = Array[int]([2])
 weight = 2
