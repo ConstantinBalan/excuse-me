@@ -30,6 +30,7 @@ script = ExtResource("2_h6cjv")
 script = ExtResource("2_6bhvp")
 
 [node name="Apartment_Background" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_s7ihx")
@@ -55,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -740.0
-offset_top = -390.0
-offset_right = 811.0
-offset_bottom = -83.0
+offset_left = -472.501
+offset_top = -389.25964
+offset_right = 543.499
+offset_bottom = -82.25964
 grow_horizontal = 2
 grow_vertical = 0
 rotation = 0.0027675813
@@ -92,32 +93,6 @@ offset_top = 97.0
 offset_right = -205.0
 offset_bottom = -699.0
 metadata/_edit_use_anchors_ = true
-
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="PlayExcuseButton" type="Button" parent="UI/Control"]
-layout_mode = 0
-offset_left = 795.0
-offset_top = 422.0
-offset_right = 900.0
-offset_bottom = 475.0
-text = "Play Card"
-
-[node name="PlayExcuseText" type="Label" parent="UI/Control"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 1317.0
-offset_top = 424.0
-offset_right = 1580.0
-offset_bottom = 460.0
-text = "Debug Text Box"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="NextEventButton" type="Button" parent="UI"]
 unique_name_in_owner = true

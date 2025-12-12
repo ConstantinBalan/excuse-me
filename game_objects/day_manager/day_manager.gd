@@ -15,6 +15,8 @@ var week_number: int
 @onready var current_day_label: Label = %CurrentDay
 @onready var current_week_label: Label = %CurrentWeek
 @onready var player_energy_label: Label = %PlayerEnergy
+@onready var background_image: Sprite2D = %Apartment_Background
+
 
 @onready var player : Player = %Player
 
@@ -75,10 +77,13 @@ func _generate_and_start_day_section(day_section: GameEnums.DaySection) -> void:
 	match day_section:
 		GameEnums.DaySection.WORK:
 			_generate_events_for_section(daily_work_events, day_section)
+			background_image.texture = load("res://assets/Background_Images/Office.png")
 		GameEnums.DaySection.COMMUTE:
 			_generate_events_for_section(daily_commute_events, day_section)
+			background_image.texture = load("res://assets/Background_Images/Commute.jpg")
 		GameEnums.DaySection.HOME:
 			_generate_events_for_section(daily_home_events, day_section)
+			background_image.texture = load("res://assets/Background_Images/Home.jpeg")
 	
 	# Display the first event of this section
 	display_next_event()

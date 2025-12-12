@@ -22,7 +22,7 @@ func connect_signals() -> void:
 
 
 func check_if_event_won(played_card: Card):
-	var base_success : float = 0.2
+	var base_success : float = 0.5
 	var final_success : float = base_success
 	var severity_modifier : float
 	var category_bonus_modifier : float
@@ -34,19 +34,26 @@ func check_if_event_won(played_card: Card):
 	GameSignals.severity_result.emit(sev_int)
 	if severity_modifier != 0.0:
 		print_rich("[color=yellow][i]Severity Modifier applied: %.2f[/i][/color]" % severity_modifier)
+	GameSignals.severity_result.emit(severity_modifier)
+	await get_tree().create_timer(1.0).timeout
 	final_success += severity_modifier
 	
 	# Check for category bonus
 	category_bonus_modifier = category_comparision(played_card, event)
 	if category_bonus_modifier != 0.0:
 		print_rich("[color=yellow][i]Category bonus modifier applied: %.2f[/i][/color]" % category_bonus_modifier)
+	GameSignals.category_result.emit(category_bonus_modifier)
+	await get_tree().create_timer(1.0).timeout
+
 	final_success += category_bonus_modifier
 	
+	var num_matched_keywords: int = 0
 	# Positive keyword modifier
 	for key_word in played_card.card_data.excuse_key_words:
 		if key_word in event.current_event.event_stats.effective_keywords:
 			final_success += 0.05
-			
+			num_matched_keywords += 1
+	GameSignals.keywords_result.emit(num_matched_keywords)
 	print_rich("[color=green][b]Final Success: %s[/b][/color]" % final_success)
 	
 	return final_success

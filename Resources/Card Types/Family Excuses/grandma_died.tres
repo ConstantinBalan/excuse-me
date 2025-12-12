@@ -10,5 +10,5 @@ card_name = "Grandma Died"
 card_cost = 10
 card_flavor_text = "Guys, I'm sorry but my other grandma just passed away and we were really close."
 card_excuse_severity = 2
-excuse_key_words = Array[String](["Family", "Death"])
+excuse_key_words = Array[String](["Family", "Death", "Emergency"])
 metadata/_custom_type_script = "uid://disngqtd7hbjl"

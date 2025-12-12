@@ -10,4 +10,4 @@ signal event_played_status(energy_lost: int)
 # 
 signal severity_result(result_amount: float)
 signal category_result(result_amount: float)
-signal keywords_result(result_amount: float)
+signal keywords_result(result_amount: int)

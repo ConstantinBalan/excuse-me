@@ -11,11 +11,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wmbuv")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 110.0
+color = Color(0.18896914, 0.18896914, 0.18896914, 1)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(640, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 107.0
 
 [node name="DidYouConvinceThemLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -43,13 +49,19 @@ size_flags_vertical = 3
 text = "Severity Modifier"
 horizontal_alignment = 1
 
-[node name="StatusOfSeverityModifier" type="Label" parent="VBoxContainer/HBoxContainer/SeverityContainer"]
+[node name="StatusOfSeverityModifier" type="RichTextLabel" parent="VBoxContainer/HBoxContainer/SeverityContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
 text = "Status Of Sev Mod"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
