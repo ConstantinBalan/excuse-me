@@ -129,9 +129,9 @@ size_flags_stretch_ratio = 0.2
 text = "Energy"
 
 [node name="SuccessCheckPopUp" parent="UI" instance=ExtResource("15_gibmg")]
-offset_left = 769.0
-offset_top = 505.0
-offset_right = -488.0
-offset_bottom = -445.0
+offset_left = 25.0
+offset_top = 123.0
+offset_right = -1232.0
+offset_bottom = -827.0
 
 [connection signal="pressed" from="UI/NextEventButton" to="." method="_on_next_event_button_pressed"]
