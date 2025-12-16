@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://d0o27aa6brcpc" path="res://Themes/main_theme.tres" id="1_f17eu"]
 [ext_resource type="Script" uid="uid://c8nrsphpohsrr" path="res://game_objects/card/card.gd" id="2_4pa57"]
-[ext_resource type="Shader" uid="uid://o22b6o4dqekk" path="res://assets/Shaders/Hover3D_Basic.gdshader" id="3_hjs6c"]
+[ext_resource type="Shader" uid="uid://b6xi174cryyy" path="res://assets/Shaders/Shade.gdshader" id="3_3l8wj"]
 [ext_resource type="Texture2D" uid="uid://c6ikgojm7xv7g" path="res://assets/Card_Placeholder.png" id="3_t30y5"]
 [ext_resource type="Texture2D" uid="uid://cgceuqtokloqu" path="res://assets/jack_of_diamonds2.png" id="4_luc4e"]
 [ext_resource type="Script" uid="uid://b8u7pfsm1were" path="res://game_objects/card/card_states/card_base_state.gd" id="4_q34kd"]
@@ -11,18 +11,13 @@
 [ext_resource type="Script" uid="uid://yae31gci4ssk" path="res://game_objects/card/card_states/card_dragging_state.gd" id="6_t30y5"]
 [ext_resource type="Script" uid="uid://bf1d622r7upyt" path="res://game_objects/card/card_states/card_released_state.gd" id="7_luc4e"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mamu8"]
-shader = ExtResource("3_hjs6c")
-shader_parameter/_tilt_Scale = 0.5
-shader_parameter/_isSpecularLight = false
-shader_parameter/_speularLightIntensity = 0.5
-shader_parameter/_speularLightPower = 3.0
-shader_parameter/_mousePos = Vector2(0, 0)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_luc4e"]
+shader = ExtResource("3_3l8wj")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mar3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f17eu"]
-size = Vector2(200, 309)
+size = Vector2(200, 305.5)
 
 [node name="CardUI" type="Control"]
 custom_minimum_size = Vector2(200, 307)
@@ -33,53 +28,50 @@ offset_bottom = 140.25
 theme = ExtResource("1_f17eu")
 script = ExtResource("2_4pa57")
 
-[node name="Color" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CardVisuals" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_luc4e")
+
+[node name="Color" type="ColorRect" parent="CardVisuals"]
 mouse_filter = 2
 
-[node name="CardBackground" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_mamu8")
-layout_mode = 1
+[node name="CardBackground" type="TextureRect" parent="CardVisuals"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 200.0
+offset_bottom = 307.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1, 0.99181443)
 texture = ExtResource("3_t30y5")
 expand_mode = 1
 
-[node name="CardImage" type="TextureRect" parent="."]
+[node name="CardImage" type="TextureRect" parent="CardVisuals"]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_mar3j")
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = -99.5
-offset_right = 96.0
-offset_bottom = 39.5
+offset_left = 8.0
+offset_top = 54.0
+offset_right = 192.34297
+offset_bottom = 164.54272
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.0198383, 1.2483863)
 texture = ExtResource("4_luc4e")
 expand_mode = 1
 
-[node name="CardName" type="Label" parent="."]
+[node name="CardName" type="Label" parent="CardVisuals"]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -56.0
+offset_left = 44.0
 offset_top = 15.0
-offset_right = 31.0
+offset_right = 131.0
 offset_bottom = 38.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 14
@@ -87,35 +79,35 @@ text = "Card Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardCost" type="Label" parent="."]
+[node name="CardCost" type="Label" parent="CardVisuals"]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -30.0
+offset_left = 170.0
 offset_top = 10.0
-offset_right = -4.0
+offset_right = 196.0
 offset_bottom = 44.0
 grow_horizontal = 0
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CardFlavorText" type="Label" parent="."]
+[node name="CardFlavorText" type="Label" parent="CardVisuals"]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -91.0
-offset_top = -106.0
-offset_right = 96.0
-offset_bottom = -10.0
+offset_left = 9.0
+offset_top = 201.0
+offset_right = 196.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.0088463, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 autowrap_mode = 2
 
@@ -142,7 +134,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
-position = Vector2(100, 154)
+position = Vector2(100, 152.25)
 shape = SubResource("RectangleShape2D_f17eu")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -167,9 +159,9 @@ state = 4
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="CardBackground" to="CardBackground" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CardBackground" to="CardBackground" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="CardImage" to="CardImage" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CardImage" to="CardImage" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CardVisuals/CardBackground" to="CardVisuals/CardBackground" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardVisuals/CardBackground" to="CardVisuals/CardBackground" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CardVisuals/CardImage" to="CardVisuals/CardImage" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CardVisuals/CardImage" to="CardVisuals/CardImage" method="_on_mouse_exited"]
 [connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
 [connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

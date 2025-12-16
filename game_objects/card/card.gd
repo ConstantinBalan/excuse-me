@@ -3,7 +3,7 @@ extends Node
 
 @onready var card_image: TextureRect = %CardImage
 @onready var card_name: Label = %CardName
-@onready var card_color : ColorRect = $Color
+@onready var card_color : ColorRect = $CardVisuals/Color
 @onready var card_cost: Label = %CardCost
 @onready var card_flavor_text: Label = %CardFlavorText
 

@@ -4,11 +4,9 @@ extends Node
 @onready var event: EventUI = %EventUI
 
 #Excuse cards are effective against -> Events
-#Family Cards -> Family, Friends, Co-workers, Strangers
-#Friends Cards -> Family, Strangers
-#Co-worker Cards -> Family, Friends
-#Goods/Services Cards -> Family, Co-workers
-#Stranger/Misc. Cards -> N/A
+#Family Cards -> Family, Friends, Work, 
+#Friends Cards -> Family
+#Work Cards -> Family, Friends
 
 
 
