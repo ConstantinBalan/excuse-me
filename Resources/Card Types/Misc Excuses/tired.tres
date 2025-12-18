@@ -1,14 +1,19 @@
-[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://dgesk4vmcuq46"]
+[gd_resource type="Resource" script_class="CardStats" load_steps=4 format=3 uid="uid://dgesk4vmcuq46"]
 
-[ext_resource type="Texture2D" uid="uid://d221q678ftnrr" path="res://assets/king_of_hearts.png" id="1_3c21y"]
-[ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_wusvc"]
+[ext_resource type="Script" path="res://Resources/Resource Scripts/card_stats.gd" id="1_stats"]
+[ext_resource type="Texture2D" uid="uid://d221q678ftnrr" path="res://assets/king_of_hearts.png" id="2_texture"]
+[ext_resource type="Script" path="res://Resources/Resource Scripts/effects/deal_impact_effect.gd" id="3_deal_impact"]
+
+[sub_resource type="Resource" id="SubResource_DealImpactEffect_1" script=ExtResource("3_deal_impact")]
+amount = 15
 
 [resource]
-script = ExtResource("1_wusvc")
-card_texture = ExtResource("1_3c21y")
+script = ExtResource("1_stats")
+card_texture = ExtResource("2_texture")
 card_name = "Tired"
 card_cost = 1
 card_flavor_text = "I just ain't feeling it, chief."
 card_category = 4
+card_excuse_severity = 0
 excuse_key_words = Array[String](["Social", "Tired"])
-metadata/_custom_type_script = "uid://disngqtd7hbjl"
+effects = [SubResource("SubResource_DealImpactEffect_1")]

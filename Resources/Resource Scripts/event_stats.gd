@@ -3,6 +3,7 @@ extends Resource
 
 @export var event_name: String
 @export var event_flavor_text: String
+@export var integrity: int = 50
 @export_range(1,20,1) var event_energy_cost: int
 @export var event_type: GameEnums.Category
 @export var event_severity: GameEnums.Severity

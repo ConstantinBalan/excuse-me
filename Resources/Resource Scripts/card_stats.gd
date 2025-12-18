@@ -24,3 +24,4 @@ enum card_style_type {FRIENDS, FAMILY, WORK}
 @export var card_excuse_severity: GameEnums.Severity
 
 @export var excuse_key_words : Array[String]
+@export var effects: Array[CardEffect]
