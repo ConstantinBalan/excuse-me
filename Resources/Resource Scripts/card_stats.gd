@@ -25,3 +25,5 @@ enum card_style_type {FRIENDS, FAMILY, WORK}
 
 @export var excuse_key_words : Array[String]
 @export var effects: Array[CardEffect]
+
+@export var model_path: String

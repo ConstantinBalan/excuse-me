@@ -68,10 +68,12 @@ alignment = 1
 [node name="CardUI" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
 tooltip_text = "The Grandma Died Card is a trump card of sorts when a card of the specific suit hasn't been used recently"
+debug_card_data = ExtResource("4_aqiog")
 card_data = ExtResource("4_aqiog")
 
 [node name="CardUI2" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]
 layout_mode = 2
+debug_card_data = ExtResource("5_v06vk")
 card_data = ExtResource("5_v06vk")
 
 [node name="CardUI3" parent="UI/Hand_Root" instance=ExtResource("3_xuagx")]

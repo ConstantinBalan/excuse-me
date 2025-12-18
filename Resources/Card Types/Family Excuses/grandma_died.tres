@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://cwwxiff6d7dgx"]
+[gd_resource type="Resource" script_class="CardStats" load_steps=4 format=3 uid="uid://cwwxiff6d7dgx"]
 
 [ext_resource type="Texture2D" uid="uid://cgceuqtokloqu" path="res://assets/jack_of_diamonds2.png" id="1_qj3fs"]
 [ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="1_x1sab"]
+[ext_resource type="Script" uid="uid://bh8s63kg0hgrb" path="res://Resources/Resource Scripts/card_effect.gd" id="2_i8k2c"]
 
 [resource]
 script = ExtResource("1_x1sab")
@@ -11,4 +12,5 @@ card_cost = 10
 card_flavor_text = "Guys, I'm sorry but my other grandma just passed away and we were really close."
 card_excuse_severity = 2
 excuse_key_words = Array[String](["Family", "Death", "Emergency"])
+model_path = "res://art/cards_3d/grandma_died.tscn"
 metadata/_custom_type_script = "uid://disngqtd7hbjl"

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjpg7njvl3v0p"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fp0ph"]
+
+[node name="TheRuns" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5277008, 0, 0, 0, 0.49600303, 0, 0, 0, 0.53326976, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_fp0ph")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.76046264, 0, 0.6493817, 0, 1, 0, -0.6493817, 0, 0.76046264, 1.1719074, -1.1920929e-07, 1.06746)

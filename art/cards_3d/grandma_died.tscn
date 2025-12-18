@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccb8f5x8x5gqr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tbkbg"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_4a803"]
+
+[node name="GrandmaDied" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.708471, 0, 0, 0, 0.7309229, 0, 0, 0, 0.8051359, 0, 0.07854478, 0)
+mesh = SubResource("BoxMesh_tbkbg")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.708471, 0, 0, 0, 0.7309229, 0, 0, 0, 0.8051359, 0, 0.50526386, 0)
+mesh = SubResource("TorusMesh_4a803")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.90892893, -0.106039606, 0.40324172, 0.014735739, 0.97468513, 0.2230957, -0.4166907, -0.19683602, 0.88748205, 0.9498533, 0.90590537, 1.2203896)

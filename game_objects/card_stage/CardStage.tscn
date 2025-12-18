@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlc4vlntj3wn6"]
+
+[sub_resource type="Environment" id="Environment_sabm8"]
+
+[node name="CardStage" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+projection = 1
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7902192, 0, -0.6128243, 0.1586106, 0.9659258, 0.20452377, 0.59194285, -0.25881904, 0.7632931, -1.2800827, 0, 0.0014429092)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sabm8")

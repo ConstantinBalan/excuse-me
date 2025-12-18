@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardStats" load_steps=3 format=3 uid="uid://dk6xa606gslde"]
+[gd_resource type="Resource" script_class="CardStats" load_steps=4 format=3 uid="uid://dk6xa606gslde"]
 
 [ext_resource type="Texture2D" uid="uid://cnvw20eywkxpk" path="res://assets/jack_of_spades2.png" id="1_2jnot"]
 [ext_resource type="Script" uid="uid://disngqtd7hbjl" path="res://Resources/Resource Scripts/card_stats.gd" id="2_d8c34"]
+[ext_resource type="Script" uid="uid://bh8s63kg0hgrb" path="res://Resources/Resource Scripts/card_effect.gd" id="2_dbmsm"]
 
 [resource]
 script = ExtResource("2_d8c34")
@@ -12,3 +13,4 @@ card_flavor_text = "Can't tell if it was the Mexican, or the Step Mom's Goulash.
 card_category = 4
 card_excuse_severity = 1
 excuse_key_words = Array[String](["Health", "Emergency"])
+model_path = "res://art/cards_3d/the_runs.tscn"
