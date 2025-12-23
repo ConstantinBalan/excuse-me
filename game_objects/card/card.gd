@@ -95,7 +95,7 @@ func _process_tilt(delta: float) -> void:
 	# Note: Mouse X movement rotates around Y axis (Yaw)
 	# Note: Mouse Y movement rotates around X axis (Pitch)
 	# We negate y_offset because moving mouse DOWN (positive Y) should tilt card UP (negative X rot)
-	var target_rot := Vector3(-y_offset * tilt_intensity, x_offset * tilt_intensity, 0.0)
+	var target_rot := Vector3(y_offset * tilt_intensity, x_offset * tilt_intensity, 0.0)
 	
 	# 4. Apply smooth interpolation
 	model_holder.rotation_degrees = model_holder.rotation_degrees.lerp(target_rot, lerp_speed * delta)
